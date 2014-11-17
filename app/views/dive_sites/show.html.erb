@@ -1,1 +1,9 @@
 <%= render @dive_site %>
+
+<ul>
+  <%= render @images %>
+</ul>
+
+<% if signed_in? %>
+  <%= render "images/form", dive_site: @dive_site, image: @image %>
+<% end %>

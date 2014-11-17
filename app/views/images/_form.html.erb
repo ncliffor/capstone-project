@@ -1,0 +1,14 @@
+<p>-------------------------</p>
+<%= form_for [dive_site, image] do |form| %>
+  <%= render "error_messages", target: image %>
+
+  <div>
+    <h5>Add a photo</h5>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <%= form.submit "Add an Image" %>
+<% end %>
+
+<p><em>WIP, users can upload images</em></p>

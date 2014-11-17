@@ -19,6 +19,8 @@ class DiveSitesController < ApplicationController
 
   def show
     @dive_site = DiveSite.find(params[:id])
+    @image = Image.new
+    @images = @dive_site.images
   end
 
   private
