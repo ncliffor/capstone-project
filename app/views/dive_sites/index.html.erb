@@ -1,1 +1,8 @@
-<h1>Welcom to the DiveSites</h1>
+<h1>Welcome to the DiveSites</h1>
+
+<% if current_user.can_modify? %>
+  <%= link_to "Add a dive site", new_dive_site_path %>
+<% end %>
+
+<%= render @dive_sites %>
+

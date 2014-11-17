@@ -1,0 +1,25 @@
+<%= form_for dive_site do |form| %>
+  <%= render "error_messages", target: dive_site %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :depth %>
+    <%= form.text_field :depth %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
