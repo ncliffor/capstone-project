@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117150529) do
+ActiveRecord::Schema.define(version: 20141117154921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dive_sites", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "location",    null: false
+    t.text     "description"
+    t.integer  "depth"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",           null: false
