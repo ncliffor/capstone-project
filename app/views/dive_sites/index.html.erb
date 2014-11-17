@@ -4,5 +4,6 @@
   <%= link_to "Add a dive site", new_dive_site_path %>
 <% end %>
 
-<%= render @dive_sites %>
-
+<ul>
+  <%= render collection: @dive_sites, partial: "dive_sites/listing" %>
+</ul>

@@ -17,6 +17,10 @@ class DiveSitesController < ApplicationController
     @dive_sites = DiveSite.all
   end
 
+  def show
+    @dive_site = DiveSite.find(params[:id])
+  end
+
   private
 
   def dive_site_params

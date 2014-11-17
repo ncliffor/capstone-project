@@ -9,6 +9,7 @@
 <body>
   <div>
     <% if signed_in? %>
+      <%= link_to "Divr", root_path %> |
       <%= link_to "Sign out", session_path, method: :delete %><br />
       <% if current_user.admin? %>
         <h5>Welcome almighty Admin</h5>
