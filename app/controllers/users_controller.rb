@@ -16,9 +16,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = find_user_from_url
+  end
+
+  def update
+    @user = find_user_from_url
+    if @user.update(user_params)
+      redirect_to user_path
+    else
+      render :show
+    end
+  end
+
+  def edit
+    @user = find_user_from_url
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :image_url)
+  end
+
+  def find_user_from_url
+    User.find(params[:id])
   end
 end
