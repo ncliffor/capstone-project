@@ -18,3 +18,7 @@
 <% end %>
 
 <%= link_to "Edit profile", edit_user_path %>
+
+<%= render @images %>
+
+<%= render "images/form", image: @image %>

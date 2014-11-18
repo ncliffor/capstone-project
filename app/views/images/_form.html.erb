@@ -1,6 +1,8 @@
 <p>-------------------------</p>
-<%= form_for [dive_site, image] do |form| %>
+<%= form_for image do |form| %>
   <%= render "error_messages", target: image %>
+
+  <%= form.hidden_field :dive_site_id %>
 
   <div>
     <h5>Add a photo</h5>

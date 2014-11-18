@@ -21,7 +21,7 @@ class DiveSitesController < ApplicationController
 
   def show
     @dive_site = DiveSite.find(params[:id])
-    @image = Image.new
+    @image = @dive_site.images.new
     @images = @dive_site.images
   end
 

@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def show
     @user = find_user_from_url
+    @image = Image.new
+    @images = @user.images
   end
 
   def update
