@@ -1,3 +1,4 @@
 <li>
-  <%= link_to listing.name, dive_site_path(listing) %>
+  <%= link_to listing.name, dive_site_path(listing) %><br />
+  <%= image_tag listing.first_image.url, class: "thumbnail" %>
 </li>
