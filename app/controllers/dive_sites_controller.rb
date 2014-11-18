@@ -1,4 +1,6 @@
 class DiveSitesController < ApplicationController
+  before_action :require_admin, only: [:new, :create]
+
   def create
     @dive_site = DiveSite.new(dive_site_params)
 
@@ -28,5 +30,11 @@ class DiveSitesController < ApplicationController
   def dive_site_params
     params.require(:dive_site).
       permit(:name, :location, :description, :depth)
+  end
+
+  def require_admin
+    unless current_user.admin?
+      redirect_to dive_sites_path
+    end
   end
 end
