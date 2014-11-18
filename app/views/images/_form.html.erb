@@ -11,4 +11,8 @@
   <%= form.submit "Add an Image" %>
 <% end %>
 
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <p><em>WIP, users can upload images</em></p>

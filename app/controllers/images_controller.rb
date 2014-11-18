@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
     if image.save
       redirect_to dive_site_path(dive_site)
     else
+      flash[:notice] = "Enter a url to add an image"
       redirect_to dive_site_path(dive_site)
     end
   end
