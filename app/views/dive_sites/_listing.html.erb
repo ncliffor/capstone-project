@@ -1,4 +1,13 @@
 <li>
   <%= link_to listing.name, dive_site_path(listing) %><br />
   <%= image_tag listing.first_image.url, class: "thumbnail" %>
+  <h5>Liked by <%= pluralize listing.liked_dive_sites.count, "person" %></h5>
+
+  <% if signed_in? %>
+    <% if current_user.likes_site?(listing) %>
+      <p>You like this site</p>
+    <% else %>
+      <%= button_to "Like this site", dive_site_likes_path(listing) %>
+    <% end %>
+  <% end %>
 </li>
