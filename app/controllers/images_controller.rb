@@ -9,10 +9,18 @@ class ImagesController < ApplicationController
     end
   end
 
+  def show
+    @image = find_image_from_url
+  end
+
   private
 
   def image_params
     params.require(:image).
       permit(:url, :dive_site_id)
+  end
+
+  def find_image_from_url
+    Image.find(params[:id])
   end
 end
