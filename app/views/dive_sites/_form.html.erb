@@ -1,3 +1,9 @@
+<div id="map_wrapper">
+  <div id="map_canvas"></div>
+</div>
+
+<div id="output"></div>
+
 <%= form_for dive_site do |form| %>
   <%= render "error_messages", target: dive_site %>
 
@@ -8,7 +14,7 @@
 
   <div>
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.text_field :location, id: "coords" %>
   </div>
 
   <div>

@@ -13,8 +13,35 @@ function createMap(){
 
   var mapCanvas = document.getElementById("map_canvas")
 
-  window.map = new google.maps.Map(mapCanvas, MAP_OPTIONS);
+    window.map = new google.maps.Map(mapCanvas, MAP_OPTIONS);
+
+  if (window.location.href.indexOf("dive_sites/new") > -1) {
+    google.maps.event.addListenerOnce(map, "click", function(event) {
+      placeMarker(event.latLng);
+    });
+  }
 }
+
+function placeMarker(location){
+  var marker = new google.maps.Marker({
+    position: location,
+    map:map,
+    draggable:true,
+  });
+
+  google.maps.event.addListener(marker, "dragstart", function(event){
+    updateOutput(event.latLng);
+  });
+
+  function updateOutput(location){
+    output.innerHTML='Latitude: '+marker.position.k+'<br>Longitude: '+marker.position.B;
+      $("#coords").val(marker.position.k)
+
+    requestAnimationFrame(updateOutput);
+  }
+  output.innerHTML='Latitude: '+marker.position.k+'<br>Longitude: '+marker.position.B;
+}
+
 
 function addLocations() {
   $(".address").each(function(i, address) {
