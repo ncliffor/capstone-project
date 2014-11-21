@@ -1,5 +1,14 @@
+<div id="map-canvas"></div>
+
 <div class="address">Sandy Bay, Honduras</div>
+
 <h1>Welcome to the DiveSites</h1>
+
+Find a dive site near:
+<div id="panel">
+  <input id="address" type="textbox" value="Sydney, NSW">
+  <input type="button" value="Geocode" onclick="codeAddress()">
+</div>
 
 <% if signed_in? %>
   <% if current_user.can_modify? %>

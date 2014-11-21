@@ -1,3 +1,11 @@
+Add a dive site near:
+<div id="panel">
+  <input id="address" type="textbox" value="Sydney, NSW">
+  <input type="button" value="Locate" onclick="codeAddress()">
+</div>
+
+<div id="latlng"></div>
+
 <div id="map_wrapper">
   <div id="map_canvas"></div>
 </div>
@@ -14,17 +22,17 @@
 
   <div>
     <%= form.label :location %>
-    <%= form.text_field :location, id: "coords" %>
+    <%= form.text_field :location, class: "coords" %>
   </div>
 
   <div>
     <%= form.label :latitude %>
-    <%= form.text_field :latitude, class: "lat_coords" %>
+    <%= form.text_field :latitude, class: "lat_coords", disabled: true %>
   </div>
 
   <div>
     <%= form.label :longitude %>
-    <%= form.text_field :longitude, class: "long_coords" %>
+    <%= form.text_field :longitude, class: "long_coords", disabled: true %>
   </div>
 
   <div>
