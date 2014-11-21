@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141119202739) do
-=======
-ActiveRecord::Schema.define(version: 20141119185454) do
->>>>>>> Create liked dives table
+ActiveRecord::Schema.define(version: 20141121202203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +23,8 @@ ActiveRecord::Schema.define(version: 20141119185454) do
     t.integer  "depth"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "latitude"
+    t.integer  "longitude"
   end
 
   create_table "image_likes", force: true do |t|

@@ -34,12 +34,13 @@ function placeMarker(location){
   });
 
   function updateOutput(location){
-    output.innerHTML='Latitude: '+marker.position.k+'<br>Longitude: '+marker.position.B;
-      $("#coords").val(marker.position.k)
+      $(".lat_coords").val(marker.position.k);
+      $(".long_coords").val(marker.position.B)
 
     requestAnimationFrame(updateOutput);
   }
-  output.innerHTML='Latitude: '+marker.position.k+'<br>Longitude: '+marker.position.B;
+      $(".lat_coords").val(marker.position.k);
+      $(".long_coords").val(marker.position.B)
 }
 
 
