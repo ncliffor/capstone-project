@@ -1,3 +1,8 @@
+<div class="listing-location">
+  <div class="site_lat"><%= listing.latitude %></div>
+  <div class="site_lng"><%= listing.longitude %></div>
+</div>
+
 <li>
   <%= link_to listing.name, dive_site_path(listing) %><br />
   <%= image_tag listing.first_image.url, class: "thumbnail" %>

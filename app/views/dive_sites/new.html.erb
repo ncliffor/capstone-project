@@ -1,3 +1,5 @@
-<div class="address">Sandy Bay, Honduras</div><br />
-
 <%= render "form", dive_site: @dive_site %>
+
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>

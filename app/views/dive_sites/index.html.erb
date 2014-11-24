@@ -1,12 +1,10 @@
 <div id="map-canvas"></div>
 
-<div class="address">Sandy Bay, Honduras</div>
-
 <h1>Welcome to the DiveSites</h1>
 
 Find a dive site near:
 <div id="panel">
-  <input id="address" type="textbox" value="Sydney, NSW">
+  <input id="address" type="textbox" value="Boston, MA">
   <input type="button" value="Geocode" onclick="codeAddress()">
 </div>
 
@@ -23,4 +21,3 @@ Find a dive site near:
 <ul>
   <%= render collection: @dive_sites, partial: "dive_sites/listing" %>
 </ul>
-

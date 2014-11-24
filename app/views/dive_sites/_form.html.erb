@@ -1,6 +1,6 @@
 Add a dive site near:
 <div id="panel">
-  <input id="address" type="textbox" value="Sydney, NSW">
+  <input id="address" type="textbox" value="Boston, MA">
   <input type="button" value="Locate" onclick="codeAddress()">
 </div>
 
@@ -22,17 +22,17 @@ Add a dive site near:
 
   <div>
     <%= form.label :location %>
-    <%= form.text_field :location, class: "coords" %>
+    <%= form.text_field :location, class: "coords_name" %>
   </div>
 
   <div>
     <%= form.label :latitude %>
-    <%= form.text_field :latitude, class: "lat_coords", disabled: true %>
+    <%= form.text_field :latitude, class: "lat_coords" %>
   </div>
 
   <div>
     <%= form.label :longitude %>
-    <%= form.text_field :longitude, class: "long_coords", disabled: true %>
+    <%= form.text_field :longitude, class: "long_coords" %>
   </div>
 
   <div>

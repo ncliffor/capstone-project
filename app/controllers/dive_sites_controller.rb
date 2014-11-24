@@ -7,7 +7,9 @@ class DiveSitesController < ApplicationController
     if @dive_site.save
       redirect_to dive_sites_path
     else
-      render :new
+      flash[:error] = "Make sure Name and Location are filled out.
+        Mark the map if the exact location is known."
+      redirect_to new_dive_site_path
     end
   end
 
@@ -29,7 +31,7 @@ class DiveSitesController < ApplicationController
 
   def dive_site_params
     params.require(:dive_site).
-      permit(:name, :location, :description, :depth)
+      permit(:name, :location, :description, :depth, :latitude, :longitude)
   end
 
   def require_admin
