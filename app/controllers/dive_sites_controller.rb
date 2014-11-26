@@ -1,5 +1,6 @@
 class DiveSitesController < ApplicationController
   before_action :require_admin, only: [:new, :create]
+  before_action :require_login
 
   def create
     @dive_site = DiveSite.new(dive_site_params)

@@ -1,13 +1,25 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+<div class="hero">
+<div class="hero-inner">
+  <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image"></a>
+  <div class="hero-copy">
+    <h1>Welcome to DiveSights!</h1>
+    <p>For use as a general reference for sharing and locating dive sites.</p>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign in" %>
-  </div>
-<% end %>
+  <%= form_for :session, url: session_path do |form| %>
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <%= form.submit "Sign in" %>
+    </div>
+  <% end %>
+  <p>-- or --
+  <%= button_to "Sign Up", new_user_path %>
+</div>
+</div>
+
