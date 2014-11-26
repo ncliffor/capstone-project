@@ -20,6 +20,7 @@ gem 'monban-generators'
 
 gem 'rails_12factor', group: :production
 
+gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
