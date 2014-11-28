@@ -1,12 +1,26 @@
-<div class="listing-location">
-  <div class="site_lat"><%= listing.latitude %></div>
-  <div class="site_lng"><%= listing.longitude %></div>
-</div>
+<div class="card">
+  <% if listing.most_liked? %>
+    <div class="ribbon-wrapper"><div class="ribbon">Most Liked</div></div>
+  <% end %>
 
-<li>
-  <%= link_to listing.name, dive_site_path(listing) %><br />
-  <%= image_tag listing.first_image.url, class: "thumbnail" %>
-  <h5>Liked by <%= pluralize listing.liked_dive_sites.count, "person" %></h5>
+  <% if listing.has_coordinates? %>
+    <div class="listing-location">
+      <div class="site_lat"><%= listing.latitude %></div>
+      <div class="site_lng"><%= listing.longitude %></div>
+    </div>
+  <% end %>
+
+  <li class="block">
+    <div class="card-image"><%= link_to image_tag(listing.first_image.url, class: "thumbnail"), dive_site_path(listing) %></div>
+    <div class="card-header"><%= link_to listing.name, dive_site_path(listing) %><br /></div>
+    <div class="card-copy"><p></p></div>
+    <div class="card-stats">
+      <ul>
+        <li><%= pluralize listing.liked_dive_sites.count, "like" %></li>
+      </ul>
+    </div>
+  </li>
+
 
   <% if signed_in? %>
     <% if current_user.likes_site?(listing) %>
@@ -15,4 +29,5 @@
       <%= button_to "Like this site", dive_site_likes_path(listing) %>
     <% end %>
   <% end %>
-</li>
+  </li>
+</div>

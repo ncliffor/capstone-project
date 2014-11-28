@@ -2,22 +2,26 @@
 
 <h1>Welcome to the DiveSites</h1>
 
-Find a dive site near:
 <div id="panel">
+Find a dive site near:
   <input id="address" type="textbox" value="Boston, MA">
-  <input type="button" value="Geocode" onclick="geocodeAddress()">
+  <input id="address" type="button" value="Search" onclick="geocodeAddress()">
 </div>
 
+<div class="new_dive_site">
 <% if signed_in? %>
   <% if current_user.can_modify? %>
     <%= link_to "Add a dive site", new_dive_site_path %>
   <% end %>
 <% end %>
+</div>
 
 <div id="map_wrapper">
   <div id="map_canvas"></div>
 </div>
 
-<ul>
-  <%= render collection: @dive_sites, partial: "dive_sites/listing" %>
-</ul>
+<div class="cards">
+  <ul>
+    <%= render collection: @dive_sites, partial: "dive_sites/listing" %>
+  </ul>
+</div>
