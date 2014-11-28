@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DiveSites</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>DiveSites</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
 
-  <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJIKL_oYNrRGfDr2M96MKBAWnwem9zjhE">
-  </script>
+    <script type="text/javascript"
+    </script>
 
-  <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
 
-</head>
-<body>
-  <div>
-    <% if signed_in? %>
-      <%= link_to "Divr, whats a div-r?", root_path %> |
-      <%= link_to "Profile", user_path(current_user) %>
-      <%= link_to "Sign out", session_path, method: :delete %><br />
-      <% if current_user.admin? %>
-        <h5>Welcome almighty Admin</h5>
+  </head>
+  <body>
+    <div id="container">
+
+      <header class="navigation">
+        <div class="navigation-wrapper">
+          <a href="javascript:void(0)" class="logo">
+            <img src="https://raw.githubusercontent.com/ncliffor/capstone-project/master/app/assets/images/diver_logo2.gif" alt="Logo Image">
+          </a>
+          <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+          <div class="nav">
+            <% if signed_in? %>
+            <ul id="navigation-menu">
+              <li class="nav-link"><a href="/">DiveSights</a></li>
+              <li class="nav-link"><%= link_to "Profile", user_path(current_user) %></li>
+              <li class="nav-link"><a href="javascript:void(0)">About?</a></li>
+              <li class="nav-link more"><a href="javascript:void(0)">Regions?</a>
+                <ul class="submenu">
+                  <li><a href="javascript:void(0)">Submenu Item</a></li>
+                  <li><a href="javascript:void(0)">Another Item</a></li>
+                  <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+                    <ul class="submenu">
+                      <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                      <li><a href="javascript:void(0)">Another Item</a></li>
+                    </ul>
+                  </li>
+                  <li class="more"><a href="javascript:void(0)">Another submenu</a>
+                    <ul class="submenu">
+                      <li><a href="javascript:void(0)">Sub-submenu</a></li>
+                      <li><a href="javascript:void(0)">An Item</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="navigation-tools">
+            <div class="search-bar">
+              <div class="search-and-submit">
+                <input type="search" placeholder="Enter Search" />
+                <button type="submit">
+                  <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+                </button>
+              </div>
+            </div>
+            <%= link_to "Sign Out", session_path, method: :delete, class: "sign-up" %>
+        <% if current_user.admin? %>
+          <h5>WelcomeAdmin</h5>
+        <% end %>
       <% end %>
-    <% else %>
-      <%= link_to "Sign in", new_session_path %>
-      <%= link_to "Sign up", new_user_path %>
-    <% end %>
-  </div>
+          </div>
+        </div>
+      </header>
 
 <%= yield %>
 
