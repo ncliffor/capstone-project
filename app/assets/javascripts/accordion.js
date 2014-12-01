@@ -19,8 +19,7 @@ $(document).ready(function() {
       $(this).removeClass("active-nav-item");
     });
     $(this).addClass("active-nav-item");
-    $(".nav
-        .more").removeClass("active-nav-item");
+    $(".nav.more").removeClass("active-nav-item");
   });
 });
 

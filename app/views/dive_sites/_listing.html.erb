@@ -3,23 +3,29 @@
     <div class="ribbon-wrapper"><div class="ribbon">Most Liked</div></div>
   <% end %>
 
-  <% if listing.has_coordinates? %>
-    <div class="listing-location">
-      <div class="site_lat"><%= listing.latitude %></div>
-      <div class="site_lng"><%= listing.longitude %></div>
-    </div>
-  <% end %>
-
   <li class="block">
-    <div class="card-image"><%= link_to image_tag(listing.first_image.url, class: "thumbnail"), dive_site_path(listing) %></div>
-    <div class="card-header"><%= link_to listing.name, dive_site_path(listing) %><br /></div>
-    <div class="card-copy"><p></p></div>
-    <div class="card-stats">
-      <ul>
-        <li><%= pluralize listing.liked_dive_sites.count, "like" %></li>
-      </ul>
+    <div class="infowindow" data-id="<%= listing.id %>">
+      <% if listing.has_coordinates? %>
+        <div class="listing-location">
+          <div class="site_lat"><%= listing.latitude %></div>
+          <div class="site_lng"><%= listing.longitude %></div>
+        </div>
+      <% end %>
+
+      <div class="card-image"><%= link_to image_tag(listing.first_image.url, class: "thumbnail"), dive_site_path(listing) %></div>
+      <div class="card-header"><%= link_to listing.name, dive_site_path(listing) %></div>
+      <% if listing.depth? %>
+        <div class="card-copy"><p>Avg. Depth <%= listing.depth %></p></div>
+      <% else %>
+        <div class="card-copy"><p></p></div>
+      <% end %>
     </div>
-  </li>
+    <div class="card-stats">
+        <ul>
+          <li><%= pluralize listing.liked_dive_sites.count, "like" %></li>
+        </ul>
+      </div>
+    </li>
 
 
   <% if signed_in? %>
