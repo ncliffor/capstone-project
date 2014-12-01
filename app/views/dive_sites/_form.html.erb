@@ -1,7 +1,7 @@
-Add a dive site near:
 <div id="panel">
+Add a dive site near:
   <input id="address" type="textbox" value="Boston, MA">
-  <input type="button" value="Locate" onclick="geocodeAddress()">
+  <input id="address" type="button" value="Locate" onclick="geocodeAddress()">
 </div>
 
 <div id="latlng"></div>
@@ -12,6 +12,7 @@ Add a dive site near:
 
 <div id="output"></div>
 
+<div id="dive_site_form">
 <%= form_for dive_site do |form| %>
   <%= render "error_messages", target: dive_site %>
 
@@ -42,8 +43,9 @@ Add a dive site near:
 
   <div>
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_area :description %>
   </div>
 
   <%= form.submit %>
 <% end %>
+</div>

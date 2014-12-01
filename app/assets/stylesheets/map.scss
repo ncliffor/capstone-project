@@ -26,3 +26,8 @@
     @include span-columns(2 of 10);
   }
 }
+
+#dive_site_form {
+  @include span-columns(10);
+  @include shift(1);
+}
