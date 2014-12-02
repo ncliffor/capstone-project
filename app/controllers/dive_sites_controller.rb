@@ -23,12 +23,27 @@ class DiveSitesController < ApplicationController
   end
 
   def show
-    @dive_site = DiveSite.find(params[:id])
+    @dive_site = find_dive_site_from_url
     @image = @dive_site.images.new
     @images = @dive_site.images
   end
 
+  def edit
+    @dive_site = find_dive_site_from_url
+  end
+
+  def update
+    @site = find_dive_site_from_url
+    @site.update(dive_site_params)
+
+    redirect_to @site
+  end
+
   private
+
+  def find_dive_site_from_url
+    DiveSite.find(params[:id])
+  end
 
   def dive_site_params
     params.require(:dive_site).

@@ -1,0 +1,12 @@
+<div class="welcome">
+  <h1>Dive site Editor</h1>
+</div>
+
+<% if @dive_site.has_coordinates? %>
+  <div class="listing-location">
+    <div class="site_lat"><%= @dive_site.latitude %></div>
+    <div class="site_lng"><%= @dive_site.longitude %></div>
+  </div>
+<% end %>
+
+<%= render "form", dive_site: @dive_site %>
