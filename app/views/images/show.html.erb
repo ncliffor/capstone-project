@@ -1,16 +1,25 @@
-<%= link_to "Back to", dive_site_path(@image.dive_site_id) %><br />
-<%= link_to @image.dive_site.name, dive_site_path(@image.dive_site_id) %><br />
+<div class="image_show">
+  <div class="image_stats">
+    <% if @image.dive_site.present? %>
+      <div class="image_site">
+        <%= link_to @image.dive_site.name, dive_site_path(@image.dive_site_id) %>
+      </div>
 
-<%= @image.dive_site.location %><br />
+      <%= @image.dive_site.location %>
+    <% end %>
+  </div>
 
-<%= render @image %>
+  <%= render @image %>
 
-<% if signed_in? %>
-  <% if current_user.likes_image?(@image) %>
-    <h5>You love this image</h5>
-  <% else %>
-    <%= button_to "Like Image", image_likes_path(@image) %>
+  <p>Posted by: <%= link_to @image.user.email, user_path(@image.user) %></p>
+
+  <% if signed_in? %>
+    <% if current_user.likes_image?(@image) %>
+      <h5>You love this image</h5>
+    <% else %>
+      <%= button_to "Like Image", image_likes_path(@image) %>
+    <% end %>
   <% end %>
-<% end %>
 
-<h5>Liked by <%= pluralize @image.image_likes.count, "person" %></h5>
+  <h5>Liked by <%= pluralize @image.image_likes.count, "person" %></h5>
+</div>

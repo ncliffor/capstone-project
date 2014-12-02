@@ -2,3 +2,14 @@
   height: 200px;
   width: auto;
 }
+
+.image_show{
+  @include span-columns(10);
+  @include shift(1);
+
+  .image_site{
+    display: inline;
+    @include shift(4);
+    font-size: 1.25em;
+  }
+}

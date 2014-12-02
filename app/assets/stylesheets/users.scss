@@ -1,0 +1,16 @@
+.user_show{
+  @include span-columns(10);
+  @include shift(1);
+
+  .profile-pic{
+    @include span-columns(5);
+
+    img {
+      max-height: 300px;
+    }
+  }
+
+  .user-images{
+    @include span-columns(10);
+  }
+}
