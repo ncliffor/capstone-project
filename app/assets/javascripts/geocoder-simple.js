@@ -8,9 +8,22 @@ function initialize(){
   createMap();
   window.geocoder = new google.maps.Geocoder();
   addLocations();
-  geocodeAddress();
   window.infowindow = new google.maps.InfoWindow({
     maxWidth: 100
+  });
+
+  var geocoder = $("#geocode")[0]
+  geocoder.addEventListener("click", function (){
+    geocodeAddress();
+  });
+
+  var geocodeForm = $("#address")[0]
+  geocodeForm.addEventListener("keypress", function(event){
+    var ENTER = 13
+    var key = event.keyCode;
+    if (key === ENTER){
+      geocodeAddress();
+    }
   });
 }
 
@@ -98,6 +111,7 @@ function geocodeAddress() {
         map: map,
         position: results[0].geometry.location
       });
+      marker.setVisible(false);
     } else {
       console.warn('Geocode was not successful for the following reason: ' + status);
     }

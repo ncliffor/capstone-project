@@ -22,6 +22,10 @@
     display: inline;
   }
 
+  #geocode {
+    display: inline;
+  }
+
   .new_dive_site {
     @include span-columns(2 of 10);
   }
