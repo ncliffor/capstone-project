@@ -7,7 +7,9 @@
     <%= link_to "Edit Site Info", edit_dive_site_path %>
   <div>
 
+  <div id="dive-carousel">
     <%= render collection: @images, partial: "dive_sites/image" %>
+  </div>
 
   <% if signed_in? %>
     <%= render "images/form", image: @image %>

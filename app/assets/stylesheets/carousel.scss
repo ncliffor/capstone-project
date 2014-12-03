@@ -1,0 +1,28 @@
+#user-carousel {
+  clear: both;
+
+  .item{
+    margin: 3px;
+
+    img{
+      display: block;
+    }
+  }
+}
+
+#dive-carousel {
+  clear: both;
+
+  .item {
+    padding:5px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+}

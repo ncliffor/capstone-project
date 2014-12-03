@@ -24,3 +24,5 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
+
+gem 'owlcarousel-rails'

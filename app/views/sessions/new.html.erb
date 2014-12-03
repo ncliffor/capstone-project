@@ -1,6 +1,6 @@
 <div class="hero">
   <div class="hero-inner">
-    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/ncliffor/capstone-project/master/app/assets/images/diver_logo2.gif" alt="Logo Image"></a>
+    <a href="" class="dive-flag-logo"><img src="/assets/dive_flag.jpg" alt="Logo Image"></a>
     <div class="hero-copy">
       <h1>Welcome to DiveSights!</h1>
       <p>For use as a general reference for sharing and locating dive sites.</p>
@@ -21,6 +21,6 @@
     <% end %>
 
     <p>-- or --</p>
-    <%= link_to "Sign Up", new_user_path %>
+    <%= button_to "Sign Up", new_user_path, method: "get" %>
   </div>
 </div>

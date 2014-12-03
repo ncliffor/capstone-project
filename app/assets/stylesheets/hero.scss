@@ -7,7 +7,7 @@
   $hero-color: white;
   $gradient-angle: 10deg;
   $hero-image:
-  'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  '/assets/water_background.jpg';
 
   @include background(url($hero-image),
   linear-gradient($gradient-angle, $hero-background-bottom,
@@ -20,6 +20,12 @@
 
   .hero-logo img {
     height: 3em;
+    margin-bottom: 2.5em;
+  }
+
+  .dive-flag-logo img {
+    height: 6em;
+    border: solid black 3px;
     margin-bottom: 2.5em;
   }
 

@@ -1,4 +1,18 @@
 .dive_site_show {
   @include span-columns(10);
   @include shift(1);
+
+  .dive-specs {
+    @include span-columns(5, "block-collapse");
+  }
+
+
+  .dive-description {
+  margin-top: 20px;
+    @include span-columns(6);
+  }
+
+  .edit_site {
+    clear: both
+  }
 }

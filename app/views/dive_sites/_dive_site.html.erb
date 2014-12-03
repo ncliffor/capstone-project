@@ -1,7 +1,11 @@
+<div class="dive-specs">
 <h1><%= dive_site.name %></h1>
 
 <h4><%= dive_site.location %></h4>
 
 <h5>Average depth: <%= dive_site.depth %>ft</h5>
+</div>
 
-<p>About: <%= dive_site.description %></p>
+<div class="dive-description">
+  <%= dive_site.description %>
+</div>

@@ -8,6 +8,7 @@ function initialize(){
   createMap();
   window.geocoder = new google.maps.Geocoder();
   addLocations();
+  geocodeAddress();
   window.infowindow = new google.maps.InfoWindow({
     maxWidth: 100
   });
