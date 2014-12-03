@@ -6,8 +6,7 @@
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image:
-  '/assets/water_background.jpg';
+  $hero-image: "<%= asset_path "water_background.jpg" %>";
 
   @include background(url($hero-image),
   linear-gradient($gradient-angle, $hero-background-bottom,
