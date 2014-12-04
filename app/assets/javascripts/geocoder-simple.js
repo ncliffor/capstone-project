@@ -99,7 +99,6 @@ function addLocations() {
 };
 
 function geocodeAndAddMarker(lat, lng, id){
-  console.log(lat, lng);
   var latLng = new google.maps.LatLng(lat, lng);
   window.geocoder.geocode({ 'latLng': latLng }, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {

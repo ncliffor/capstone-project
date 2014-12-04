@@ -1,5 +1,5 @@
 class DiveSitesController < ApplicationController
-  before_action :require_admin, only: [:new, :create]
+  before_action :require_admin, only: [:destroy]
   before_action :require_login
 
   def create
@@ -37,6 +37,13 @@ class DiveSitesController < ApplicationController
     @site.update(dive_site_params)
 
     redirect_to @site
+  end
+
+  def destroy
+    site = find_dive_site_from_url
+    site.destroy
+
+    redirect_to root_path
   end
 
   private

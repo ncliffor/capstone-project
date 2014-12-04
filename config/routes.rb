@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :image_likes, only: [:create], to: "image_likes", as: "likes"
   end
 
-  resources :dive_sites, only: [:new, :create, :index, :show, :edit, :update] do
+  resources :dive_sites do
     resources :liked_dive_sites, only: [:create],
       to: "liked_dive_sites", as: "likes"
   end

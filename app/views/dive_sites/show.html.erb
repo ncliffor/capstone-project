@@ -4,7 +4,11 @@
   </div>
 
   <div class="edit_site">
-    <%= link_to "Edit Site Info", edit_dive_site_path %>
+    <%= link_to "Edit Site Info", edit_dive_site_path %><br />
+
+    <% if signed_in? && current_user.admin? %>
+      <%= link_to "Delete Site", dive_site_path, method: :delete %>
+    <% end %>
   <div>
 
   <div id="dive-carousel">
