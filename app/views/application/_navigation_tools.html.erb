@@ -1,6 +1,6 @@
 <div class="navigation-wrapper">
 <a href="/" class="logo">
-  <img src="<%= asset_path("diver_logo_inverted.gif") %>" alt="Logo Image">
+  <%= image_tag "diver_logo_inverted.gif" %>
 </a>
 <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
 <div class="nav">
@@ -13,10 +13,12 @@
 <div class="navigation-tools">
   <div class="search-bar">
     <div class="search-and-submit">
-      <input type="search" placeholder="Enter Search" />
-      <button type="submit">
-        <img src="<%= asset_path("search-icon.png") %>" alt="Search Icon">
-      </button>
+      <%= form_tag searches_path, :method => :get do %>
+        <%= search_field_tag :search, nil, placeholder: "Search Dive Sites" %>
+        <button type="submit">
+          <%= image_tag "search-icon.png" %>
+        </button>
+      <% end %>
     </div>
   </div>
   <%= link_to "Sign Out", session_path, method: :delete, class: "sign-up" %>

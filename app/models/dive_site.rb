@@ -20,4 +20,8 @@ class DiveSite < ActiveRecord::Base
   def has_coordinates?
     latitude.present? && longitude.present?
   end
+
+  def self.search(query)
+    where("name ILIKE ?", "%#{query}%")
+  end
 end

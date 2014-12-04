@@ -1,0 +1,12 @@
+.search_error {
+  @include shift(1);
+  padding-top: 20px;
+
+  .clear-search {
+    clear: both;
+  }
+
+  #map_wrapper {
+    @include shift(0);
+  }
+}

@@ -1,7 +1,17 @@
+<h4>Drop marker, or enter coordinates to mark a site</h4>
+
 <div id="panel">
   <span>Add a dive site near:</span>
   <input id="address" type="textbox" value="Boston, MA">
   <input id="geocode" type="button" value="Locate">
+</div>
+
+<div id="map_wrapper">
+  <div id="map_canvas"></div>
+</div>
+
+<div class="reset_form">
+<%= link_to "Reset Map/Form", new_dive_site_path %>
 </div>
 
 <%= render "form", dive_site: @dive_site %>

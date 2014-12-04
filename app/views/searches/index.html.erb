@@ -1,0 +1,21 @@
+<div class="search_error">
+  <div class="clear-search">
+    <%= link_to "Clear Search", root_path %>
+  </div>
+
+  <% if @search.nil? %>
+    <h3>No results matching location</h3>
+  <% else %>
+    <h3>Locations matching search for: <%= @search %></h3>
+
+    <div id="map_wrapper">
+      <div id="map_canvas"></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="cards">
+  <ul>
+    <%= render collection: @dive_sites, partial: "dive_sites/listing" %>
+  </ul>
+</div>

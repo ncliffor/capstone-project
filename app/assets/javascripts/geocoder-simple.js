@@ -7,11 +7,11 @@ var MAP_OPTIONS = {
 function initialize(){
   createMap();
   window.geocoder = new google.maps.Geocoder();
-  addLocations();
-  geocodeAddress();
   window.infowindow = new google.maps.InfoWindow({
     maxWidth: 100
   });
+  addLocations();
+  geocodeAddress();
 
   var geocoder = $("#geocode")[0]
   geocoder.addEventListener("click", function (){

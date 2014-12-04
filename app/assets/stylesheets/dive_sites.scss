@@ -16,3 +16,8 @@
     clear: both
   }
 }
+
+.reset_form {
+  clear: both;
+  @include shift(1);
+}
