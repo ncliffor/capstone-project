@@ -26,3 +26,5 @@ gem 'bitters'
 gem 'refills'
 
 gem 'owlcarousel-rails'
+
+gem 'geocoder'
