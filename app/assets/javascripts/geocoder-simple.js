@@ -84,7 +84,7 @@ function codeLatLng() {
         console.warn('No results found');
       }
     } else {
-      console.log('Geocoder failed due to: ' + status);
+      console.warn('Geocoder failed due to: ' + status);
     }
   });
 }
@@ -117,7 +117,7 @@ function geocodeAndAddMarker(lat, lng, id){
         infowindow.open(map, marker);
       });
     } else {
-      alert("Geocode was not successful for the following reason: " + status);
+      console.warn("Geocode was not successful for the following reason: " + status);
     }
   });
 }

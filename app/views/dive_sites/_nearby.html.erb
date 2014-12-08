@@ -1,0 +1,10 @@
+<% if dive_site.nearbys(20).empty? %>
+  <p>No known sites</p>
+<% else %>
+  <% dive_site.nearbys(20).each do |nearby| %>
+    <li>
+      <%= link_to nearby.name, nearby %> (<%= nearby.distance.round(2) %> miles,
+      <%= Geocoder::Calculations.compass_point(nearby.bearing) %>)
+    </li>
+  <% end %>
+<% end %>

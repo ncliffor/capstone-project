@@ -6,7 +6,7 @@ class DiveSitesController < ApplicationController
     @dive_site = DiveSite.new(dive_site_params)
 
     if @dive_site.save
-      redirect_to dive_sites_path
+      redirect_to @dive_site
     else
       flash[:error] = "Make sure Name and Location are filled out.
         Mark the map if the exact location is known."

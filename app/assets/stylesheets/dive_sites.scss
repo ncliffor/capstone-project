@@ -2,18 +2,23 @@
   @include span-columns(10);
   @include shift(1);
 
-  .dive-specs {
-    @include span-columns(5, "block-collapse");
-  }
-
-
   .dive-description {
-  margin-top: 20px;
-    @include span-columns(6);
+    @include span-columns(7);
+    clear: both;
   }
 
   .edit_site {
-    clear: both
+    @include shift(9);
+  }
+
+  .nearby_sites {
+    @include span-columns(4);
+    margin-top: 20px;
+    clear: both;
+  }
+
+  .dive_image_form {
+    clear: both;
   }
 }
 

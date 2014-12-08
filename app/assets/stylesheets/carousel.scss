@@ -11,10 +11,8 @@
 }
 
 #dive-carousel {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  clear: both;
+  @include span-columns(7);
+  margin-top: 20px;
 
   .item {
     padding:5px;
