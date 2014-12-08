@@ -1,5 +1,5 @@
 <div class="user_show">
-  <h1>This is the profile for <%= current_user.email %></h1>
+  <h1>This is the profile for <%= @user.email %></h1>
 
   <div class="profile-pic">
     <% if @user.image_url? %>
@@ -21,7 +21,9 @@
 
       <%= link_to "Edit profile", edit_user_path %>
 
-      <%= render "images/form", image: @image %>
+      <% if current_user.can_modify?(@user) %>
+        <%= render "images/form", image: @image %>
+      <% end %>
   </div>
 
   <div id="user-carousel">

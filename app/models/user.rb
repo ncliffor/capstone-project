@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   has_many :image_likes
   has_many :liked_images, through: :image_likes, source: :image
 
-  def can_modify?
-    admin?
+  def can_modify?(owner)
+    admin? || id == owner.id
   end
 
   def like_site(dive_site)
