@@ -14,10 +14,14 @@ class DiveSite < ActiveRecord::Base
 
   def most_liked?
     sites = DiveSite.all
-    likes = sites.sort_by { |site| site.liked_dive_sites.count }
-    if self == likes.last
+    liked = sites.sort_by { |site| site.liked_dive_sites.count }
+    if self.like_count == liked.last.like_count
       true
     end
+  end
+
+  def like_count
+    liked_dive_sites.count
   end
 
   def has_coordinates?
