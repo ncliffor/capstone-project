@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :images
+  has_many :comments
 
   has_many :liked_dive_sites
   has_many :liked_dives, through: :liked_dive_sites, source: :dive_site
@@ -10,8 +11,8 @@ class User < ActiveRecord::Base
   has_many :image_likes
   has_many :liked_images, through: :image_likes, source: :image
 
-  def can_modify?(owner)
-    admin? || id == owner.id
+  def can_modify?(user)
+    admin? || id == user.id
   end
 
   def like_site(dive_site)

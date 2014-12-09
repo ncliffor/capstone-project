@@ -7,6 +7,7 @@ class DiveSite < ActiveRecord::Base
 
   has_many :images
   has_many :liked_dive_sites
+  has_many :comments
 
   def first_image
     images.first || NullImage.new

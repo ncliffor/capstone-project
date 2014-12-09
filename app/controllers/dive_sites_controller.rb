@@ -26,6 +26,7 @@ class DiveSitesController < ApplicationController
     @dive_site = find_dive_site_from_url
     @image = @dive_site.images.new
     @images = @dive_site.images
+    @comments = @dive_site.comments
   end
 
   def edit

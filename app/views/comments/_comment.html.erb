@@ -1,0 +1,9 @@
+<li>
+  <b><%= comment.user.email %></b> -
+
+  <%= comment.body %>
+
+  <% if current_user.can_modify?(comment.user) %>
+    <%= link_to "Remove Comment", dive_site_comment_path(id: comment.id, dive_site_id: comment.dive_site), method: :delete %>
+  <% end %>
+</li>

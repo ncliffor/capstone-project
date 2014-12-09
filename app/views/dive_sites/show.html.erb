@@ -15,6 +15,16 @@
     <%= render collection: @images, partial: "dive_sites/image" %>
   </div>
 
+  <h5>Comments</h5>
+
+  <div class="comments">
+    <%= link_to "Add a comment", new_dive_site_comment_path(@dive_site) %>
+  </div>
+
+  <ul>
+    <%= render @comments %>
+  </ul>
+
   <% if signed_in? %>
     <div class="dive_image_form">
       <%= render "images/form", image: @image %>

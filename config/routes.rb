@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :dive_sites do
     resources :liked_dive_sites, only: [:create],
       to: "liked_dive_sites", as: "likes"
+    resources :comments, only: [:new, :create, :destroy]
   end
 
   root "dive_sites#index"
