@@ -13,13 +13,13 @@ function initialize(){
   addLocations();
   geocodeAddress();
 
-  var geocoder = $("#geocode")[0]
-  geocoder.addEventListener("click", function (){
+  var geoInput = $("#geocoder")[0]
+  geoInput.addEventListener("click", function (){
     geocodeAddress();
   });
 
-  var geocodeForm = $("#address")[0]
-  geocodeForm.addEventListener("keypress", function(event){
+  var geoForm = $("#address")[0]
+  geoForm.addEventListener("keypress", function(event){
     var ENTER = 13
     var key = event.keyCode;
     if (key === ENTER){

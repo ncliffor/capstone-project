@@ -1,6 +1,5 @@
 class DiveSite < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
-  after_validation :reverse_geocode
 
   validates :name, presence: true
   validates :location, presence: true
