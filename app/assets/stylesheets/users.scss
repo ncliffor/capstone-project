@@ -15,6 +15,7 @@
   }
     .about_me {
       @include span-columns(5, "block-collapse");
+      margin-left: 10px;
     }
 
   .user-images{
