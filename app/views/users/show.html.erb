@@ -21,12 +21,13 @@
 
       <%= link_to "Edit profile", edit_user_path %>
 
-      <% if current_user.can_modify?(@user) %>
-        <%= render "images/form", image: @image %>
-      <% end %>
   </div>
 
   <div id="user-carousel">
     <%= render collection: @images, partial: "dive_sites/image" %>
   </div>
+
+  <% if current_user.can_modify?(@user) %>
+    <%= render "images/form", image: @image %>
+  <% end %>
 </div>
