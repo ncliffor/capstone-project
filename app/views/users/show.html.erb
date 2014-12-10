@@ -20,7 +20,11 @@
       <% end %>
 
       <%= link_to "Edit profile", edit_user_path %>
+  </div>
 
+  <div class="about_me">
+    <h3>About Me</h3>
+    <%= @user.about %>
   </div>
 
   <div id="user-carousel">

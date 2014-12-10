@@ -1,8 +1,7 @@
 <%= form_for [dive_site, comment] do |form| %>
   <%= render "error_messages", target: comment %>
 
-  <%= form.label "Add Comment" %>
   <%= form.text_area :body %>
 
-  <%= form.submit %>
+  <%= form.submit "Add your Comment" %>
 <% end %>

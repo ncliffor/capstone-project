@@ -2,15 +2,30 @@
   @include span-columns(10);
   @include shift(1);
 
+  h1 {
+    margin-bottom: 15px;
+  }
+
   .profile-pic{
-    @include span-columns(5);
+    @include span-columns(5, "block-collapse");
 
     img {
       max-height: 300px;
     }
   }
+    .about_me {
+      @include span-columns(5, "block-collapse");
+    }
 
   .user-images{
     @include span-columns(10);
   }
+}
+
+#user_about {
+  height: 100px;
+}
+
+#comment_body {
+  height: 150px;
 }
