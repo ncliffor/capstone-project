@@ -54,7 +54,7 @@ function addLocations() {
 
 function geocodeAndAddMarker(lat, lng, id){
   var latLng = new google.maps.LatLng(lat, lng);
-  window.geocoder.geocode({ 'latLng': latLng }, function(results, status) {
+  window.geocoder.geocode({ "latLng": latLng }, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       var result_location = results[0].geometry.location;
 
@@ -77,8 +77,8 @@ function geocodeAndAddMarker(lat, lng, id){
 }
 
 function geocodeAddress() {
-  var address = document.getElementById('address').value;
-  window.geocoder.geocode( { 'address': address}, function(results, status) {
+  var address = document.getElementById("address").value;
+  window.geocoder.geocode( { "address": address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
@@ -87,7 +87,7 @@ function geocodeAddress() {
       });
       marker.setVisible(false);
     } else {
-      console.warn('Geocode was not successful for the following reason: ' + status);
+      console.warn("Geocode was not successful for the following reason: " + status);
     }
   });
 }

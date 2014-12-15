@@ -27,20 +27,20 @@ function placeMarker(location){
 }
 
 function codeLatLng() {
-  var input = $('#latlng')[0].value;
+  var input = $("#latlng")[0].value;
   var latlngStr = input.split(',', 2);
   var lat = parseFloat(latlngStr[0]);
   var lng = parseFloat(latlngStr[1]);
   var latlng = new google.maps.LatLng(lat, lng);
-  window.geocoder.geocode({'latLng': latlng}, function(results, status) {
+  window.geocoder.geocode({"latLng": latlng}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[1]) {
         $(".coords_name").val(results[1].formatted_address);
       } else {
-        console.warn('No results found');
+        console.warn("No results found");
       }
     } else {
-      console.warn('Geocoder failed due to: ' + status);
+      console.warn("Geocoder failed due to: " + status);
     }
   });
 }
