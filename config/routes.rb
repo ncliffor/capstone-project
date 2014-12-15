@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :searches, only: [:index]
 
   resources :dive_sites do
-    resources :liked_dive_sites, only: [:create],
-      to: "liked_dive_sites", as: "likes"
+    resources :dive_site_likes, only: [:create],
+      to: "dive_site_likes", as: "likes"
     resources :comments, only: [:new, :create, :destroy]
   end
 

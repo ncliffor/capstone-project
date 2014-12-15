@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :comments
 
-  has_many :liked_dive_sites
-  has_many :liked_dives, through: :liked_dive_sites, source: :dive_site
+  has_many :dive_site_likes
+  has_many :liked_dives, through: :dive_site_likes, source: :dive_site
 
   has_many :image_likes
   has_many :liked_images, through: :image_likes, source: :image

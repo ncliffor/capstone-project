@@ -5,7 +5,7 @@ class DiveSite < ActiveRecord::Base
   validates :location, presence: true
 
   has_many :images
-  has_many :liked_dive_sites
+  has_many :dive_site_likes
   has_many :comments
 
   def first_image
@@ -14,14 +14,14 @@ class DiveSite < ActiveRecord::Base
 
   def most_liked?
     sites = DiveSite.all
-    liked = sites.sort_by { |site| site.liked_dive_sites.count }
+    liked = sites.sort_by { |site| site.dive_site_likes.count }
     if self.like_count == liked.last.like_count
       true
     end
   end
 
   def like_count
-    liked_dive_sites.count
+    dive_site_likes.count
   end
 
   def has_coordinates?

@@ -1,4 +1,4 @@
-class LikedDiveSite < ActiveRecord::Base
+class DiveSiteLike < ActiveRecord::Base
   belongs_to :user
   belongs_to :dive_site
 end
