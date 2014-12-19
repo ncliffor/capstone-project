@@ -12,7 +12,7 @@ function initialize(){
   });
 
   addLocations();
-  geocodeAddress();
+  centerMapOnUser();
 
   var geoInput = $("#geocoder")[0]
     geoInput.addEventListener("click", function (){
@@ -124,7 +124,7 @@ function geocodeAndAddMarker(lat, lng, id){
 }
 
 function geocodeAddress() {
-  var address = document.getElementById("address").value;
+  var address = document.getElementById('address').value;
   window.geocoder.geocode( { "address": address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
@@ -137,4 +137,26 @@ function geocodeAddress() {
       console.warn("Geocode was not successful for the following reason: " + status);
     }
   });
+}
+
+function centerMapOnUser() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      map.setCenter(pos);
+
+      console.log("nav.geo === true");
+
+    }, function() {
+      console.log("Geolocation services denied");
+      geocodeAddress();
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    console.warn("Browser doesn't support Geolocation");
+    geocodeAddress();
+  }
+
+  geocodeAddress();
 }
